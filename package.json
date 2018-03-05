@@ -1,10 +1,10 @@
 {
   "name": "dementeey-brain-games",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
-  "description": "",
+  "description": "my first pacakge",
   "main": "index.js",
   "files": [
     "dist"
@@ -21,5 +21,8 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
   }
 }
