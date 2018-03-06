@@ -1,8 +1,9 @@
 {
   "name": "dementeey-brain-games",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "description": "my first pacakge",
   "main": "index.js",
