@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { welcome } from '..';
+import * as games from '..';
 
-welcome();
+games.welcome();
+games.greeting(games.userName());
