@@ -12,9 +12,9 @@ export default () => {
     games.question(randomNum);
     const answer = games.getUserAnswer();
     if (answer !== getYesNo) {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${getYesNo}' \nLet's try again, ${userNames}!`);
+      return games.incorrect(answer, getYesNo, userNames);
     }
-    console.log('Correct!');
+    games.correct();
   }
   return games.userCongratulation(userNames);
 };

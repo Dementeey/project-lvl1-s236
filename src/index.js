@@ -17,4 +17,6 @@ export const getUserAnswer = () => {
   const answer = readlineSync.question('Your answer: ');
   return answer;
 };
+export const incorrect = (answer, answerCorrect, name) => console.log(`'${answer}' is wrong answer ;(. Correct answer was '${answerCorrect}' \nLet's try again, ${name}!`);
+export const correct = () => console.log('Correct!');
 export const userCongratulation = name => console.log(`Congratulations, ${name}!`);
