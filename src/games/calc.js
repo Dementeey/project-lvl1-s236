@@ -13,20 +13,20 @@ const generator = () => () => {
 
   switch (true) {
     case (i === 1):
-      answer += getRandom + getRandom2;
-      quest += `${getRandom} + ${getRandom2}`;
+      answer = getRandom + getRandom2;
+      quest = `${getRandom} + ${getRandom2}`;
       break;
     case (i === 2):
-      answer += getRandom - getRandom2;
-      quest += `${getRandom} - ${getRandom2}`;
+      answer = getRandom - getRandom2;
+      quest = `${getRandom} - ${getRandom2}`;
       break;
     case (i === 3):
-      answer += getRandom * getRandom2;
-      quest += `${getRandom} * ${getRandom2}`;
+      answer = getRandom * getRandom2;
+      quest = `${getRandom} * ${getRandom2}`;
       break;
     default:
-      answer += getRandom + getRandom2;
-      quest += `${getRandom} + ${getRandom2}`;
+      answer = getRandom + getRandom2;
+      quest = `${getRandom} + ${getRandom2}`;
       break;
   }
 
