@@ -1,20 +1,12 @@
-import * as games from '..';
+import { cons } from 'hexlet-pairs';
+import engine from '..';
 
-games.welcome();
-games.rulesGame('Answer "yes" if number even otherwise answer "no". \n ');
-const userNames = games.userName();
-games.greeting(userNames);
-
-export default () => {
-  for (let i = 0; i < 3; i += 1) {
-    const randomNum = games.getRandomInt(1, 101);
-    const getYesNo = randomNum % 2 === 0 ? 'yes' : 'no';
-    games.question(randomNum);
-    const answer = games.getUserAnswer();
-    if (answer !== getYesNo) {
-      return games.incorrect(answer, getYesNo, userNames);
-    }
-    games.correct();
-  }
-  return games.userCongratulation(userNames);
+const rules = 'Answer "yes" if number even otherwise answer "no". \n ';
+const generator = () => () => {
+  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+  const quest = getRandomInt(1, 100);
+  const answer = quest % 2 === 0 ? 'yes' : 'no';
+  return cons(quest, answer);
 };
+
+export default () => engine(rules, generator());

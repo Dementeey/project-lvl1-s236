@@ -1,41 +1,44 @@
-import { cons, car, cdr } from 'hexlet-pairs';
-import * as games from '..';
+import { cons } from 'hexlet-pairs';
+import engine from '..';
 
-games.welcome();
-games.rulesGame('What is the result of the expression? \n ');
-const userNames = games.userName();
-games.greeting(userNames);
+const rules = 'What is the result of the expression? \n ';
+// const generator = () => () => {
+//   const getRandom = Math.floor(Math.random() * (50 - 1)) + 1;
+//   const getRandom2 = Math.floor(Math.random() * (50 - 1)) + 1;
+//   const answer = getRandom + getRandom2;
+//   const quest = `${getRandom} + ${getRandom2}`;
+//   return cons(quest, answer);
+// };
 
-export default () => {
-  for (let i = 0; i < 1; i += 1) {
-    const randomPair = cons(games.getRandomInt(1, 20), games.getRandomInt(1, 21));
-    const randomAnswer = car(randomPair) + cdr(randomPair);
-    games.question(`${car(randomPair)} + ${cdr(randomPair)}`);
-    const answer = games.getUserAnswer();
-    if (Number(answer) !== randomAnswer) {
-      return games.incorrect(answer, randomAnswer, userNames);
-    }
-    games.correct();
+const generator = () => () => {
+  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+  const getRandom = getRandomInt(50, 100);
+  const getRandom2 = getRandomInt(1, 50);
+  const i = getRandomInt(0, 4);
+
+  let answer = 0;
+  let quest = '';
+
+  switch (true) {
+    case (i === 1):
+      answer += getRandom + getRandom2;
+      quest += `${getRandom} + ${getRandom2}`;
+      break;
+    case (i === 2):
+      answer += getRandom - getRandom2;
+      quest += `${getRandom} - ${getRandom2}`;
+      break;
+    case (i === 3):
+      answer += getRandom * getRandom2;
+      quest += `${getRandom} * ${getRandom2}`;
+      break;
+    default:
+      answer += getRandom + getRandom2;
+      quest += `${getRandom} + ${getRandom2}`;
+      break;
   }
-  for (let i = 0; i < 1; i += 1) {
-    const randomPair = cons(games.getRandomInt(21, 80), games.getRandomInt(1, 20));
-    const randomAnswer = car(randomPair) - cdr(randomPair);
-    games.question(`${car(randomPair)} - ${cdr(randomPair)}`);
-    const answer = games.getUserAnswer();
-    if (Number(answer) !== randomAnswer) {
-      return games.incorrect(answer, randomAnswer, userNames);
-    }
-    games.correct();
-  }
-  for (let i = 0; i < 1; i += 1) {
-    const randomPair = cons(games.getRandomInt(1, 10), games.getRandomInt(1, 20));
-    const randomAnswer = car(randomPair) * cdr(randomPair);
-    games.question(`${car(randomPair)} * ${cdr(randomPair)}`);
-    const answer = games.getUserAnswer();
-    if (Number(answer) !== randomAnswer) {
-      return games.incorrect(answer, randomAnswer, userNames);
-    }
-    games.correct();
-  }
-  return games.userCongratulation(userNames);
+
+  return cons(quest, answer);
 };
+
+export default () => engine(rules, generator());
