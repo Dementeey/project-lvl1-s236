@@ -2,14 +2,6 @@ import { cons } from 'hexlet-pairs';
 import engine from '..';
 
 const rules = 'What is the result of the expression? \n ';
-// const generator = () => () => {
-//   const getRandom = Math.floor(Math.random() * (50 - 1)) + 1;
-//   const getRandom2 = Math.floor(Math.random() * (50 - 1)) + 1;
-//   const answer = getRandom + getRandom2;
-//   const quest = `${getRandom} + ${getRandom2}`;
-//   return cons(quest, answer);
-// };
-
 const generator = () => () => {
   const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const getRandom = getRandomInt(50, 100);
