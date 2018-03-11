@@ -1,12 +1,13 @@
 {
   "name": "dementeey-brain-games",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-balance": "dist/bin/brain-balance.js"
+    "brain-balance": "dist/bin/brain-balance.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "description": "my first pacakge",
   "main": "index.js",
