@@ -1,9 +1,8 @@
 import { cons } from 'hexlet-pairs';
-import engine from '..';
+import engine, { getRandomInt } from '..';
 
-const rules = 'What is the result of the expression? \n ';
+const rules = 'What is the result of the expression?';
 const generator = () => () => {
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const getRandom = getRandomInt(50, 100);
   const getRandom2 = getRandomInt(1, 50);
   const i = getRandomInt(0, 4);

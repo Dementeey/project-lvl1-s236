@@ -1,9 +1,8 @@
 import { cons } from 'hexlet-pairs';
-import engine from '..';
+import engine, { getRandomInt } from '..';
 
-const rules = 'What number is missing in this progression? \n ';
+const rules = 'What number is missing in this progression?';
 const generator = () => () => {
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const random1 = getRandomInt(1, 10);
   let num = 1;
   const numbers = [];

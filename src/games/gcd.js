@@ -1,9 +1,8 @@
 import { cons } from 'hexlet-pairs';
-import engine from '..';
+import engine, { getRandomInt } from '..';
 
-const rules = 'Find the greatest common divisor of given numbers. \n ';
+const rules = 'Find the greatest common divisor of given numbers.';
 const generator = () => () => {
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const getRandom = getRandomInt(1, 100);
   const getRandom2 = getRandomInt(1, 100);
   const gcd = (a, b) => {

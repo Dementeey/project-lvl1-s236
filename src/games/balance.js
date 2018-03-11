@@ -1,9 +1,8 @@
 import { cons } from 'hexlet-pairs';
-import engine from '..';
+import engine, { getRandomInt } from '..';
 
-const rules = 'Balance the given number. \n ';
+const rules = 'Balance the given number.';
 const generator = () => () => {
-  const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
   const balanceNum = (num) => {
     const getSortArr = (n) => {
       const str = String(n);
