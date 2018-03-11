@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engine, { getRandomInt } from '..';
 
 const rules = 'Is this number prime?';
-const generator = () => () => {
+const generator = () => {
   const quest = getRandomInt(2, 110);
 
   const isPrime2 = (num) => {
@@ -24,4 +24,4 @@ const generator = () => () => {
   return cons(quest, answer);
 };
 
-export default () => engine(rules, generator());
+export default () => engine(rules, generator);
