@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engine, { getRandomInt } from '..';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-const generator = () => () => {
+const generator = () => {
   const getRandom = getRandomInt(1, 100);
   const getRandom2 = getRandomInt(1, 100);
   const gcd = (a, b) => {
@@ -16,4 +16,5 @@ const generator = () => () => {
   return cons(quest, answer);
 };
 
-export default () => engine(rules, generator());
+export default () => engine(rules, generator);
+

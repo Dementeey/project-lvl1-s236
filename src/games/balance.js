@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engine, { getRandomInt } from '..';
 
 const rules = 'Balance the given number.';
-const generator = () => () => {
+const generator = () => {
   const balanceNum = (num) => {
     const getSortArr = (n) => {
       const str = String(n);
@@ -31,4 +31,4 @@ const generator = () => () => {
   return cons(quest, answer);
 };
 
-export default () => engine(rules, generator());
+export default () => engine(rules, generator);

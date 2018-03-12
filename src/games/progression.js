@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engine, { getRandomInt } from '..';
 
 const rules = 'What number is missing in this progression?';
-const generator = () => () => {
+const generator = () => {
   const random1 = getRandomInt(1, 10);
   let num = 1;
   const numbers = [];
@@ -17,4 +17,4 @@ const generator = () => () => {
   return cons(quest, answer);
 };
 
-export default () => engine(rules, generator());
+export default () => engine(rules, generator);

@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import engine, { getRandomInt } from '..';
 
 const rules = 'What is the result of the expression?';
-const generator = () => () => {
+const generator = () => {
   const getRandom = getRandomInt(50, 100);
   const getRandom2 = getRandomInt(1, 50);
   const i = getRandomInt(0, 4);
@@ -32,4 +32,4 @@ const generator = () => () => {
   return cons(quest, answer);
 };
 
-export default () => engine(rules, generator());
+export default () => engine(rules, generator);
